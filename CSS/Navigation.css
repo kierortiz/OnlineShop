@@ -1,0 +1,720 @@
+
+.navigation{
+    position: fixed;
+    z-index: 2;
+    height: 80px;
+    width: 100%;
+    top: 20px;
+    /* background-color: black; */
+}
+.navigation > .title{
+    position: relative;
+    top: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    text-decoration: none;
+    left: 50px;
+}
+.navigation .toggler{
+    position: fixed;
+    top: 28px;
+    right: 50px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    opacity: 0;
+    z-index: 6;
+    cursor: pointer;
+}
+.navigation .toggler:checked + .hamburger > div{
+    transform: rotate(135deg);
+    /* background-color: blanchedalmond;
+    Change color of the hamburger when clicked */
+    z-index: 5;
+}
+.navigation .toggler:checked:hover + .hamburger > div{
+    transform: rotate(225deg);
+}
+.navigation .toggler:checked + .hamburger > div::after,
+.navigation .toggler:checked + .hamburger > div::before{
+    transform: rotate(90deg);
+    top: 0%;
+}
+.navigation .toggler:checked ~ .menu{
+    visibility: visible;
+}
+.navigation .toggler:checked ~ .menu > div{
+    transform: translateX(-50%) translateY(-50%);
+}
+.navigation .toggler:checked ~ .menu > div > div{
+    opacity: 1;
+}
+.navigation .menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    visibility: hidden;
+    transform: 0.6s;
+}
+.navigation .menu > div{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translateX(100%) translateY(-50%);
+    background-color: #157ded25;/* Background ng Menu*/
+    backdrop-filter: blur(5px);
+    transition: 0.6s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+.navigation .menu > div > div{
+    max-width: 90vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+}
+.navigation .menu > div > div > ul > li{
+    list-style: none;
+    padding: 40px;
+    transition: 0.3s;
+}
+.menu > div > div > ul > li > a:hover{
+    color: #fff;
+}
+.menu > div > div > ul > li > a{
+    text-decoration: none;
+    margin: 0.5rem;
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+    letter-spacing: 10px;
+}
+.navigation .hamburger{
+    position: absolute;
+    top: 8px;
+    right: 50px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+.navigation .hamburger > div{
+    position: absolute;
+    width: 50%;
+    height: 4px;
+    border-radius: 1.5px;
+    background-color: #333; /* Change the color of the hamburger*/
+    transition: 0.4s;
+}
+.navigation .hamburger > div::before,
+.navigation .hamburger > div::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    border-radius: 1.5px;
+    background-color: inherit;
+    transition: 0.4s;
+}
+.navigation .hamburger > div::before{
+    top: -10px;
+}
+.navigation .hamburger > div::after{
+    top: 10px;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
+.modal-window {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.205);
+    backdrop-filter: blur(2px);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s;
+}
+.modal-window:target {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
+.modal-window>div {
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2em;
+    background: #ffffff;
+}
+.modal-close {
+    color: #b2bec3;
+    line-height: 50px;
+    font-size: 80%;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 70px;
+    text-decoration: none;
+}
+.modal-close:hover {
+    color: black;
+}
+.modal-back {
+    color: #b2bec3;
+    line-height: 50px;
+    font-size: 80%;
+    position: absolute;
+    left: 0;
+    text-align: center;
+    top: 0;
+    width: 70px;
+    text-decoration: none;
+}
+.modal-back:hover {
+    color: black;
+}
+.popupContainer {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.interior{
+    position: absolute;
+    top: 38px;
+    right: 130px;
+    /* left: 500px; */
+    display: fixed;
+    z-index: 5;
+}
+.modal-window div:not(:last-of-type) {
+    margin-bottom: 15px;
+}
+small {
+    color: #b2bec3;
+}
+.userPic{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    z-index: 0;
+}
+.btn, .btn2 {
+    z-index: inherit;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    right: 120px;
+    display: inline-block;
+    position: fixed;
+}
+.btn::before{
+    content: 'Login';
+    position: absolute;
+    font-size: 20px;
+    top: 10px;
+    right: 50px;
+}
+.btn2::before{
+    content: 'Signout';
+    position: absolute;
+    font-size: 20px;
+    top: 10px;
+    right: 50px;
+}
+
+/* LOGIN POPUP CONTENT START */
+.input{    
+    position: relative;
+    height: 300px;
+    width: 100%;
+    margin-top: 20px;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.input .user{
+    position: absolute;
+    top: 70px;
+    left: 0;
+    color: #b2bec3;
+    font-size: 14px;
+    pointer-events: none;
+    display: block;
+    transition: 0.5s;
+    display: flex;
+    flex-direction: row;
+}
+.input .password{
+    position: absolute;
+    top: 170px;
+    left: 0;
+    color: #b2bec3;
+    font-size: 14px;
+    /* pointer-events: none; */
+    display: block;
+    transition: 0.5s;
+    display: flex;
+    flex-direction: row;
+}
+.input input[type=text]{    
+    top: 70px;
+    left: 0;
+    position: absolute;    
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    font-size: 16px;
+    color: #1f1e1e;
+    width: 100%;
+    outline: none;
+}
+.input input[type=password]{
+    top: 170px;
+    position: absolute;
+    left: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    font-size: 16px;
+    color: #1f1e1e;
+    width: 100%;
+    outline: none;
+    z-index: 2;
+}
+.input input[type="text"]:focus + .user,
+.input input[type="text"]:valid + .user{
+    transform: translateY(-35px);
+    font-size: 14px;
+    color:  #59A4F2;
+    /* background: #C06053; */
+    padding: 2px 6px;
+}
+.input input[type="password"]:focus + label,
+.input input[type="password"]:valid + label{
+    transform: translateY(-35px);
+    font-size: 14px;
+    color:  #59A4F2;
+    /* background: #C06053; */
+    padding: 2px 6px;
+}
+
+.input .span1{
+    position: absolute;
+    top: 90px;
+    right: 0;
+    display: block;
+    background: #383838;
+    width: 100%;
+    height: 2px;
+}
+
+.input .span2{
+    position: absolute;
+    top: 190px;
+    right: 0;
+    display: block;    
+    background: #383838;
+    width: 100%;
+    height: 2px;
+}
+
+.input span:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:  #59A4F2;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s ease-in-out;
+    border: none;
+}
+
+.input input[type="text"]:focus ~ .span1:before,
+.input input[type="text"]:valid ~ .span1:before{
+    transform: scaleX(1);
+    transform-origin: left;
+    transform: transform 0.5s ease-in-out;
+}
+
+.input input[type="password"]:focus ~ .span2:before,
+.input input[type="password"]:valid ~ .span2:before{
+    transform: scaleX(1);
+    transform-origin: left;
+    transform: transform 0.5s ease-in-out;
+}
+/* LOGIN BUTTON */
+    .loginbtn{
+        position: relative;
+        top: 180px;
+        padding: 5px;
+        outline: none;
+        border: none;
+        display: inline-block;
+        background-color: #59A4F2;
+        font-size: 20px;
+        color: #fff;
+        cursor: pointer;
+        z-index: 1;
+    }
+    .loginbtn:hover{
+        background-color: #157FED;
+    }
+/* LINK TO SIGNIN */
+    .signuplink{
+        position: absolute;
+        bottom: 10px;
+        right: 115px;
+    }
+    .signuplink:hover{
+        color: #157FED;
+    }
+/* LOGIN POPUP CONTENT END */
+
+/* SIGNIN POPUP CONTENT START */
+/* INPUT TYPE */
+    .signin input[type=text],.signin  input[type=tel],.signin  input[type=password]{
+        /* top: 70px; */
+        margin-top: 10px;
+        position: relative;
+        left: 0;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        font-size: 16px;
+        color: #1f1e1e;
+        width: 100%;
+        outline: none;
+    }
+/* SIGNIN BUTTON */
+    label{letter-spacing: 0px;}
+    .signinbtn{
+        position: relative;
+        /* top: 180px; */
+        padding: 10px;
+        outline: none;
+        border: none;
+        display: inline-block;
+        background-color: #59A4F2;
+        font-size: 20px;
+        color: #fff;
+        cursor: pointer;
+    }
+    .signinbtn:hover{
+        background-color: #157FED;
+    }
+/* INPUT */
+    .signin .first{
+        position: absolute;
+        top: 95px;
+        left: 32px;
+        color: #b2bec3;
+        font-size: 14px;
+        pointer-events: none;
+        display: block;
+        transition: 0.5s;
+        display: flex;
+        flex-direction: row;
+    }
+    .signin .last{
+        position: absolute;
+        top: 160px;        
+        left: 32px;
+        color: #b2bec3;
+        font-size: 14px;
+        pointer-events: none;
+        display: block;
+        transition: 0.5s;
+        display: flex;
+        flex-direction: row;
+    }
+    .signin .cnumber{
+        position: absolute;
+        top: 225px;        
+        left: 32px;
+        color: #b2bec3;
+        font-size: 14px;
+        pointer-events: none;
+        display: block;
+        transition: 0.5s;
+        display: flex;
+        flex-direction: row;
+    }
+    .signin .suser{
+        position: absolute;
+        top: 290px;        
+        left: 32px;
+        color: #b2bec3;
+        font-size: 14px;
+        pointer-events: none;
+        display: block;
+        transition: 0.5s;
+        display: flex;
+        flex-direction: row;
+    }
+    .signin .spassword{
+        position: absolute;
+        top: 355px;        
+        left: 32px;
+        color: #b2bec3;
+        font-size: 14px;
+        pointer-events: none;
+        display: block;
+        transition: 0.5s;
+        display: flex;
+        flex-direction: row;
+    }
+    .signin .srpassword{
+        position: absolute;
+        top: 420px;        
+        left: 32px;
+        color: #b2bec3;
+        font-size: 14px;
+        pointer-events: none;
+        display: block;
+        transition: 0.5s;
+        display: flex;
+        flex-direction: row;
+    }
+/* LABEL */
+    .signin .firstname:focus ~ .first,
+    .signin .firstname:valid ~ .first{
+        transform: translateY(-25px);
+        font-size: 14px;
+        color:  #59A4F2;
+        /* background: #C06053; */
+        padding: 2px 6px;
+    }
+    .signin .lastname:focus ~ .last,
+    .signin .lastname:valid ~ .last{
+        transform: translateY(-25px);
+        font-size: 14px;
+        color:  #59A4F2;
+        /* background: #C06053; */
+        padding: 2px 6px;
+    }
+    .signin input[type=tel]:focus ~ .cnumber,
+    .signin input[type=tel]:valid ~ .cnumber{
+        transform: translateY(-25px);
+        font-size: 14px;
+        color:  #59A4F2;
+        /* background: #C06053; */
+        padding: 2px 6px;
+    }
+    .signin .us:focus ~ .suser,
+    .signin .us:valid ~ .suser{
+        transform: translateY(-25px);
+        font-size: 14px;
+        color:  #59A4F2;
+        /* background: #C06053; */
+        padding: 2px 6px;
+    }
+    .signin .pass:focus ~ .spassword,
+    .signin .pass:valid ~ .spassword{
+        transform: translateY(-25px);
+        font-size: 14px;
+        color:  #59A4F2;
+        /* background: #C06053; */
+        padding: 2px 6px;
+    }
+    .signin .pass2:focus ~ .srpassword,
+    .signin .pass2:valid ~ .srpassword{
+        transform: translateY(-25px);
+        font-size: 14px;
+        color:  #59A4F2;
+        /* background: #C06053; */
+        padding: 2px 6px;
+    }
+    
+/* SPAN */
+    .span3{
+        top: 115px;
+    }
+    .span4{
+        top: 180px;
+    }
+    .span5{
+        top: 245px;
+    }
+    .span6{
+        top: 310px;
+    }
+    .span7{
+        top: 375px;
+    }
+    .span8{
+        top: 440px;
+    }
+    .span3,.span4,.span5,.span6,.span7,.span8{
+        position: absolute;
+        left: 32px;
+        display: block;
+        background: #383838;
+        width: 335px;
+        height: 2px;
+    }
+    .signin span:before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;        
+        width: 335px;
+        height: 100%;
+        background:  #59A4F2;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.5s ease-in-out;
+        border: none;
+    }
+    .signin .firstname:focus ~ .span3:before,
+    .signin .firstname:valid ~ .span3:before{
+        transform: scaleX(1);
+        transform-origin: left;
+        transform: transform 0.5s ease-in-out;
+    }
+    .signin .lastname:focus ~ .span4:before,
+    .signin .lastname:valid ~ .span4:before{
+        transform: scaleX(1);
+        transform-origin: left;
+        transform: transform 0.5s ease-in-out;
+    }
+    .signin input[type=tel]:focus ~ .span5:before,
+    .signin input[type=tel]:valid ~ .span5:before{
+        transform: scaleX(1);
+        transform-origin: left;
+        transform: transform 0.5s ease-in-out;
+    }
+    .signin .us:focus ~ .span6:before,
+    .signin .us:valid ~ .span6:before{
+        transform: scaleX(1);
+        transform-origin: left;
+        transform: transform 0.5s ease-in-out;
+    }
+    .signin .pass:focus ~ .span7:before,
+    .signin .pass:valid ~ .span7:before{
+        transform: scaleX(1);
+        transform-origin: left;
+        transform: transform 0.5s ease-in-out;
+    }
+    .signin .pass2:focus ~ .span8:before,
+    .signin .pass2:valid ~ .span8:before{
+        transform: scaleX(1);
+        transform-origin: left;
+        transform: transform 0.5s ease-in-out;
+    }
+/* HEADER */
+    .signin{
+        letter-spacing: 3px;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: space-between; */
+        align-items: center;
+        justify-self: center;
+    }
+/* SINGIN POPUP CONTENT END */
+
+/* BACKGROUND START */
+    .blue{
+        position: absolute;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        background-color: #157FED;
+        overflow: hidden;
+    }
+    .diamond{
+        position: absolute;
+        top: 50px;
+        left: 395px;
+        width: 550px;
+        height: 550px;
+        background-color: #fff;
+        overflow: hidden;
+        transform: rotate(40deg);
+    }
+    .blue2{
+        position: absolute;
+        top: 625px;
+        left: 0;
+        width: 700px;
+        height: 700px;
+        background-color: #157FED;
+        /* transform: rotate(30deg); */
+    }
+    .diamond2{
+        position: absolute;
+        top: 725px;
+        left: 460px;
+        width: 550px;
+        height: 550px;
+        background-color: #fff;
+        transform: rotate(40deg);
+        z-index: 1;
+    }
+    .subdiamond{
+        position: absolute;
+        bottom: 0;
+        right: 0px;
+        width: 620px;
+        height: 625px;
+        z-index: 2;
+        background-color: #fff;
+        z-index: 0;
+    }
+/* BACKGROUND END */
+
+/* SCROLLBAR START*/
+/* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #59A4F2;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #157FED;
+  }
+/* SCROLLBAR END */

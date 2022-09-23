@@ -1,0 +1,324 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
+.container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+.subcontainer{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: flex;
+}
+.profile{
+    position: relative;
+    top: 100px;
+    left: 50px;
+    width: 300px;
+    height: 500px;
+    background-color: #fff;
+    border: 2px solid #dfe6e9;
+    margin-right: 110px;
+    border-radius: 10px;
+}
+.profile img{
+    display: block;
+    width: 168.25px;
+    height: 200px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.profile .username{
+    display: block;
+    border: none;
+    text-align: center;
+    width: fit-content;
+    height: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    letter-spacing: 2px;
+    font-size: medium;
+    font-weight: 600;
+}
+.profile .usname{
+    display: block;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    width: fit-content;
+    font-size: small;
+    letter-spacing: 2px;
+    color: #9da2a3;
+}
+.profile .vertical{
+    position: absolute;
+    top: 370px;
+    width: 100%;
+    background-color: #dfe6e9;
+    height: 2px;
+    border: none;
+}
+.profile .stats{
+    position: relative;
+    width: 100%;
+    height: 200px;
+    /* background-color: burlywood; */
+    display: grid;
+    grid-template-columns: 200px 100px;
+    justify-content: center;
+    border-top: 2px solid  #dfe6e9;
+    border-bottom: 2px solid  #dfe6e9;
+}
+.profile .stats p{
+    display: block;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 15px;
+    letter-spacing: 2px;
+    text-align: center;
+    font-weight: 600;
+}
+.stats .grid:nth-child(2){color: #32ff7e;}
+.stats .grid:nth-child(4){color: #ff4d4d;}
+.stats .grid:nth-child(1),.stats .grid:nth-child(3){
+    padding-left: 30px;
+    text-align: left;
+}
+.sideprofile{
+    position: relative;
+    top: 100px;    
+    width: 900px;
+    height: 500px;
+    border-radius: 10px;
+    background-color: #fff;
+    border: 2px solid #dfe6e9;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+.nav{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding: 15px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: 2px;
+    border-bottom: 2px solid #dfe6e9;
+}
+.account:active ~ #account{
+    visibility: visible;
+}
+#account{
+    position: absolute;
+    padding: 40px;
+    padding-top: 20px;
+    display: block;
+    top: 55px;    
+    left: -2px;
+    width: 900px;
+    height: 443px;
+}
+    .accunder{
+        position: absolute;
+        display: block;
+        top: -2px;
+        left: 48px;
+        width: 185px;
+        border: 1px solid #157FED;
+    }
+    .fname{
+        position: absolute;
+        color: #9da2a3;
+    }
+    #firstname{
+        position: absolute;
+        top: 45px;
+        height: 40px;
+        width: 390px;
+        border-radius: 5px;
+        border: 1px solid #bfc4c7;
+    }
+    .lname{
+        position: absolute;
+        color: #9da2a3;
+        left: 470px;
+    }
+    #lastname{
+        position: absolute;
+        top: 45px;
+        right: 40px;
+        height: 40px;
+        width: 390px;
+        border-radius: 5px;
+        border: 1px solid #bfc4c7;
+    }
+    .phone{
+        position: absolute;
+        color: #9da2a3;
+        top: 110px;
+    }
+    #phone{
+        position: absolute;
+        top: 135px;
+        height: 40px;
+        width: 390px;
+        border-radius: 5px;
+        border: 1px solid #bfc4c7;
+    }
+    .email{
+        position: absolute;
+        color: #9da2a3;
+        left: 470px;
+        top: 110px;
+    }
+    #email{
+        position: absolute;        
+        top: 135px;
+        right: 40px;
+        height: 40px;
+        width: 390px;
+        border-radius: 5px;
+        border: 1px solid #bfc4c7;
+    }
+    .address{
+        position: absolute;
+        color: #9da2a3;
+        top: 200px;
+    }
+    #address{
+        position: absolute;
+        top: 225px;
+        height: 40px;
+        width: 390px;
+        border-radius: 5px;
+        border: 1px solid #bfc4c7;
+    }
+    .city{
+        position: absolute;
+        color: #9da2a3;
+        left: 470px;
+        top: 200px;
+    }
+    #city{
+        position: absolute;        
+        top: 225px;
+        right: 40px;
+        height: 40px;
+        width: 390px;
+        border-radius: 5px;
+        border: 1px solid #bfc4c7;
+    }
+    .password{
+        position: absolute;
+        color: #9da2a3;
+        top: 290px;
+    }
+    #password{
+        position: absolute;
+        top: 315px;
+        height: 40px;
+        width: 390px;
+        border-radius: 5px;
+        border: 1px solid #bfc4c7;
+    }
+    .password2{
+        position: absolute;
+        color: #9da2a3;
+        left: 470px;
+        top: 290px;
+    }
+    #password2{
+        position: absolute;        
+        top: 315px;
+        right: 40px;
+        height: 40px;
+        width: 390px;
+        border-radius: 5px;
+        border: 1px solid #bfc4c7;
+    }
+    .line1{
+        position: absolute;
+        left: 0;
+        width: 100%;
+        border: 1px solid #dfe6e9;
+        bottom: 70px;
+    }
+    .submitbtn{
+        position: absolute;
+        bottom: 15px;
+        padding: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        font-weight: bold;
+        color: #fff;
+        border-radius: 5px;
+        border: none;
+        background-color: #59A4F2;
+        cursor: pointer;
+    }
+    .submitbtn:hover{
+        background-color: #157FED;
+    }
+#pending{
+    position: absolute;
+    display: none;
+    /* visibility: hidden; */
+    top: 55px;    
+    left: -2px;
+    width: 900px;
+    height: 443px;
+    /* background-color: rgb(36, 87, 29); */
+}
+    .penunder{
+        position: absolute;
+        display: block;
+        top: -2px;
+        left: 295px;
+        width: 160px;
+        border: 1px solid #157FED;
+    }
+
+#history{
+    position: absolute;
+    display: none;
+    /* visibility: hidden; */
+    top: 55px;    
+    left: -2px;
+    width: 900px;
+    height: 443px;
+    background-color: rgb(29, 75, 87);
+}
+#notification{
+    position: absolute;
+    display: none;
+    /* visibility: hidden; */
+    top: 55px;    
+    left: -2px;
+    width: 900px;
+    height: 443px;
+    background-color: rgb(59, 29, 87);
+}
+input{
+    /* outline: none; */
+    outline-color:  #157FED;
+    padding-left: 5px;
+    font-size: 15px;
+}
+/* input[type=password]:invalid{
+    border-color: #d63031;
+} */

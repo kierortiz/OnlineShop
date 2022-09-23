@@ -1,0 +1,49 @@
+.user {
+    width: 100%;
+    background-color: black;
+  }
+  
+  img {
+    width: 25px;
+    border-radius: 50px;
+    float: left;
+  }
+  
+  .logname {
+    font-size: .8em;
+    font-family: 'Oswald', sans-serif;
+      position: relative;
+    right: -18px;
+    bottom: -4px;
+    overflow: hidden;
+    letter-spacing: 3px;
+    opacity: 0;
+    transition: opacity .45s;
+    -webkit-transition: opacity .35s;
+  }
+  
+  .button {
+      text-decoration: none;
+      float: right;
+    padding: 12px;
+    margin: 15px;
+    color: white;
+    width: 25px;
+    background-color: black;
+    transition: width .35s;
+    -webkit-transition: width .35s;
+    overflow: hidden
+  }
+  
+  .button:hover {
+    width: 100px;
+  }
+  
+  .button:hover .logname{
+    opacity: .9;
+  }
+  
+  .button {
+    text-decoration: none;
+  }
+  
